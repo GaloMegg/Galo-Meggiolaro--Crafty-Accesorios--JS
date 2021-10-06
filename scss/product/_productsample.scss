@@ -1,0 +1,27 @@
+.content{
+    .productSample{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+        .productSampleA{
+            max-width: 100%;
+        }
+    }
+}
+
+
+@media (min-width: 517px) and (max-width:10000px){
+    .content{
+        .productSample{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        position: inherit;
+            .productSampleA{
+                width: 33.3333%;
+            }
+        }
+    }
+}

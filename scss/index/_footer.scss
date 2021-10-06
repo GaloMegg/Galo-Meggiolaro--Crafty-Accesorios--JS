@@ -1,0 +1,121 @@
+.footer{
+    background: linear-gradient(90deg, #c7abba, #ffffff);
+    background-size: 400% 400%;
+    animation: footerGradient 7s ease infinite;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;   
+    position: relative;
+    text-align: center;
+    flex-wrap: nowrap;
+    font-family: $fontFamilyFooter;
+    font-size: $fontSizeFooter;     
+    .flexFooter{
+        display: flex;
+        justify-content: space-around;
+        .footer__padding {
+            padding: 0.5%;
+            .resizeFooter{
+                font-size: 0.9rem;
+                margin-bottom: 0%;
+            }
+            
+            .footer__linksNav  {
+            @include link (0.8rem)
+            }
+            .footer__linksNav:hover{
+            @include linkHover
+            }
+            }
+    } 
+    .footer__copy{
+        .footer__copy--rights{
+            font-size: 1rem;
+        }
+        }
+    .footer__credits{
+        .footer__credits--text{
+            font-size: 0.7rem;
+            .footer__linksNav{
+                @include link(0.7rem);
+            }
+        }
+    }     
+}
+
+
+@keyframes footerGradient {
+    0%{background-position:92% 0%}
+    50%{background-position:9% 100%}
+    100%{background-position:92% 0%}
+}
+/*PC's*/
+@media (min-width: 981px) and (max-width:2400px){
+    .footer{
+    
+        .flexFooter{
+            
+            .footer__padding {
+                
+                .resizeFooter{
+                    font-size: 1.1rem;
+                    margin-bottom: 0%;
+                }
+                
+                .footer__linksNav  {
+                @include link (0.9rem)
+                }
+                .footer__linksNav:hover{
+                @include linkHover
+                }
+                }
+        } 
+        .footer__copy{
+            .footer__copy--rights{
+                font-size: 1rem;
+            }
+            }
+        .footer__credits{
+            .footer__credits--text{
+                font-size: 0.7rem;
+                .footer__linksNav{
+                    @include link(0.7rem);
+                }
+            }
+        }     
+    }}
+/*4k*/
+@media (min-width: 2401px) and (max-width:10000px){
+    .footer{
+    
+        .flexFooter{
+            
+            .footer__padding {
+                
+                .resizeFooter{
+                    font-size: 2rem;
+                    margin-bottom: 0%;
+                }
+                
+                .footer__linksNav  {
+                @include link (2rem)
+                }
+                .footer__linksNav:hover{
+                @include linkHover
+                }
+                }
+        } 
+        .footer__copy{
+            .footer__copy--rights{
+                font-size: 1.5rem;
+            }
+            }
+        .footer__credits{
+            .footer__credits--text{
+                font-size: 1.4rem;
+                .footer__linksNav{
+                    @include link(1.4rem);
+                }
+            }
+        }     
+    }}

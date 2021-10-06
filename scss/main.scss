@@ -1,0 +1,40 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/*Bootstap*/
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+/*index*/
+@import "variables";
+@import "mixin";
+@import "index/index";
+@import "index/header";
+@import "index/nav";
+@import "index/landing";
+@import "index/slogan";
+@import "index/maininfo";
+@import "index/carrousel";
+@import "index/contactform";
+@import "index/footer";
+@import "breadcrumbs";
+
+/*Products*/
+@import "product/product";
+@import "product/productsample";
+@import "product/description";
+@import "product/buybutton";
+@import "product/pslogan";
+
+
+/*Envio*/
+@import "envios/enviosGrid";
+@import "envios/rightleft";
+
+/*whoWeAre*/
+@import "whoarewe/whogrid";
+@import "whoarewe/whoweare";
+@import "whoarewe/landing";
+@import "error/error.scss";
+

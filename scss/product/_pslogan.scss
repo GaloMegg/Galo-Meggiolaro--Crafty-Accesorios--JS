@@ -1,0 +1,30 @@
+.slogan{
+    .slogan__Product {
+        display: flex;
+        justify-content: center;
+        background-color: white;
+        padding-top: 2%;
+        width: 100%;
+    }
+    .slogan__ProductClass {
+        font-size: $fontSizeCatchy;
+        font-family: $fontFamily;
+        font-weight: $fontWeight;
+        text-align: center;
+    }
+}
+@media (min-width: 981px) and (max-width:2400px){
+    .slogan{
+    .slogan__ProductClass{
+        font-size: 1.5rem;
+    }
+}
+}
+/*4k*/
+@media (min-width: 2401px) and (max-width:10000px){
+.slogan{
+    .slogan__ProductClass {
+        font-size: 3rem;
+    }
+}
+}

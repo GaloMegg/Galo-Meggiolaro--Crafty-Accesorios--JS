@@ -1,0 +1,35 @@
+.whoGrid{
+    display: grid;
+    grid-template-areas: "nav nav nav" "content content content" "slogan slogan slogan" "mainInfo mainInfo mainInfo" "contact contact contact" "breadCrumbs breadCrumbs breadCrumbs""footer footer footer";
+    
+    .nave{
+        grid-area: nav;
+    }
+    .content{
+        grid-area: content;
+    }
+    .slogan{
+        grid-area: slogan;
+    }
+    .whoWeAre{
+        grid-area: mainInfo;
+    }
+    .contact{
+        grid-area: contact;
+    }
+    .breadCrumbs{
+        grid-area: breadCrumbs;
+    }
+    .footer{
+        grid-area: footer;
+    }
+    .sticky__Item {
+        position: sticky;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: space-evenly;
+        top: 0%;
+        background-color: white;
+    }
+}

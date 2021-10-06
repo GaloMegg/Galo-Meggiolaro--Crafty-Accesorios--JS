@@ -1,0 +1,166 @@
+.contact{
+    .fieldSet{
+        display: flex; 
+        flex-direction: column;
+        justify-content: center;
+        position: relative;
+        border: 1px solid black;
+        padding: 1%;
+        background-image: $backgroundMarmol;
+        &:hover{
+            @include animationContactForm;
+        }
+        .shadow-drop-2-center{
+            font-size: $fontSizeContactForm;
+            font-family: $fontFamily;
+            font-weight: $fontWeight;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            &:focus{
+                @include animationContactForm;
+            }
+            .proyectContainer{
+                    width: 40%;     
+                        h3{
+                            text-align: center;
+                            font-size: $fontSizeContact;
+                            font-family: $fontFamily;
+                            font-weight: $fontWeight;}
+                        .whappImage{
+                            width: 50%;
+                        }
+                        .proyecto{
+                            width: 80%;
+                            height: 80%;
+                        }
+                        .radioCheck{
+                                height: 2vh;
+                                border: 0px;
+                                width: 20%;
+                            
+                        } 
+                        .proyecto{
+                            width: 100%;
+                            height: 80%;
+                        }
+                        .contactButtons{
+                            display: flex;
+                            .buttonForm{
+                                @include buttonForm;
+                                font-size: $fontSizeContactForm;
+                                font-family: $buttonFont;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+@-webkit-keyframes shadow-drop-2-center {
+    0% {
+    -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+    -webkit-box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+            box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+    }
+    100% {
+    -webkit-transform: translateZ(50px);
+                transform: translateZ(50px);
+    -webkit-box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.35);
+                box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.35);
+    }
+    }
+    @keyframes shadow-drop-2-center {
+    0% {
+        -webkit-transform: translateZ(0);
+                transform: translateZ(0);
+        -webkit-box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+                box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+    }
+    100% {
+        -webkit-transform: translateZ(50px);
+                transform: translateZ(50px);
+        -webkit-box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.35);
+                box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.35);
+    }
+    }
+
+
+    @-webkit-keyframes shadow-drop-2-center {
+        0% {
+            -webkit-transform: translateZ(0);
+                    transform: translateZ(0);
+            -webkit-box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+                    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+        }
+        100% {
+            -webkit-transform: translateZ(50px);
+                    transform: translateZ(50px);
+            -webkit-box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.35);
+                    box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.35);
+        }
+        }
+    @keyframes shadow-drop-2-center {
+        0% {
+            -webkit-transform: translateZ(0);
+                    transform: translateZ(0);
+            -webkit-box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+                    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+        }
+        100% {
+            -webkit-transform: translateZ(50px);
+                    transform: translateZ(50px);
+            -webkit-box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.35);
+                    box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.35);
+        }
+        }
+/*PC's*/
+@media (min-width: 781px) and (max-width:2400px){
+    .contact{
+        .fieldSet{
+            .shadow-drop-2-center{
+                .proyectContainer{
+                    h3{
+                        font-size: 1.3rem;
+                    }
+                    .whappImage{
+                        width:30%;
+                    }
+                    .proyecto, label{
+                        font-size: 1.1rem;
+                    }
+                    .contactButtons{
+                        .buttonForm{
+                            font-size: 1rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+/*4k*/
+@media (min-width: 2401px) and (max-width:10000px){
+    .contact{
+        .fieldSet{
+            .shadow-drop-2-center{
+                .proyectContainer{
+                    h3{
+                        font-size: 3rem;
+                    }
+                    .whappImage{
+                        width:30%;
+                    }
+                    .proyecto, label{
+                        font-size: 2rem;
+                    }
+                    .contactButtons{
+                        .buttonForm{
+                            font-size: 2rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    }

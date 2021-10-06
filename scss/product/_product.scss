@@ -1,0 +1,37 @@
+.productGrid {
+    display: grid;
+    grid-template-areas: " nav       nav      nav " " content content content" "slogan   slogan   slogan" "mainInfo mainInfo mainInfo" " buybutton buybutton buybutton" "breadCrumbs breadCrumbs breadCrumbs"  " footer   footer  footer";
+    width: 100%;
+
+.nave {
+    grid-area: nav;
+}
+
+.content {
+    grid-area: content;
+}
+.slogan {
+    grid-area: slogan;
+}
+.mainInfoProd {
+    grid-area: mainInfo;
+}
+.buyButtonGrid {
+    grid-area: buybutton;
+}
+.breadCrumbs{
+    grid-area: breadCrumbs;
+}
+.footer {
+    grid-area: footer;
+}
+.sticky__Item {
+    position: sticky;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: space-evenly;
+    top: 0%;
+    background-color: white;
+}
+}

@@ -1,0 +1,99 @@
+/*text*/
+.whoWeAre{
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    
+    .whoWeAre__text{
+        font-size: $fontSizeDescription;
+        font-family: $fontFamily;
+        font-weight: $fontWeight;
+        text-align: center;
+    
+}
+}
+/*FORM*/
+.contactFormW{
+    display: flex;
+    width: 100%;
+    
+    .fieldSet{
+        width: 100%;
+        text-align: center;
+    h3{
+                    font-size: $fontSizeContact;
+                    font-family: $fontFamily;
+                    font-weight: $fontWeight;
+    }
+    .contactRow{
+        display: flex;
+        justify-content: space-around;
+        border: none;
+        div{
+        .contactButtons{
+            display: flex;
+            .buttonForm{
+                @include buttonForm;
+                font-size: $fontSizeContactForm;
+                font-family: $buttonFont;
+            }
+        }
+    }
+    }
+}
+}
+@media (min-width: 981px) and (max-width:2400px){
+    .whoWeAre{
+    .whoWeAre__text{
+        font-size: 1.3rem;
+    }
+}
+/*form*/
+.contactFormW{
+    .fieldSet{
+        h3{
+            font-size: 2rem;
+        }  
+        .contactRow{
+            div{
+                label, input{
+                    font-size: 1.2rem;
+                }
+            .contactButtons{
+                .buttonForm{
+                    font-size: 1.2rem;
+                }
+            }
+        }
+        }
+    }
+}
+}
+/*4k*/
+@media (min-width: 2401px) and (max-width:10000px){
+    .whoWeAre{
+        .whoWeAre__text{
+            font-size: 2rem;
+        }
+    }
+/*form*/
+.contactFormW{
+    .fieldSet{
+        h3{
+            font-size: 2.5rem;
+        }  
+        .contactRow{
+            div{
+                label, input{
+                    font-size: 2rem;
+                }
+            .contactButtons{
+                .buttonForm{
+                    font-size: 2rem;
+                }
+            }
+        }
+        }
+    }
+}
+}

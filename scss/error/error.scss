@@ -1,0 +1,18 @@
+.flexError{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    a{
+        @include link;
+        text-align: center;
+        
+        .errorRedirection{
+            
+                color:$darkerBackground;
+        
+        }
+    }
+    a:hover{
+        text-decoration: none;
+    }
+}

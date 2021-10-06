@@ -1,0 +1,36 @@
+.mainGrid {
+    display: grid;
+    grid-template-areas: "nav nav nav" "content content content" "slogan slogan slogan" "mainInfo mainInfo mainInfo" "carrousel carrousel carrousel" "contact contact contact" "footer footer footer";
+    
+    .nave{
+        grid-area: nav;
+    }
+    .content{
+        grid-area: content;
+    }
+    .slogan{
+        grid-area: slogan;
+    }
+    .mainInfo{
+        grid-area: mainInfo;
+    }
+    .carrousel{
+        grid-area: carrousel;
+    }
+    .contact{
+        grid-area: contact;
+    }
+    .footer{
+        grid-area: footer;
+    }
+    .sticky__Item {
+        position: sticky;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: space-evenly;
+        top: 0%;
+        background-color: white;
+        
+    }
+}

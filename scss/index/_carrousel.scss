@@ -1,0 +1,9 @@
+.carrousel{
+    display: flex;
+    justify-content: center;
+    background-color: $darkerBackground;
+    position: relative;
+    .carrousel__resizeImage{
+        width: 100%;
+    }
+}

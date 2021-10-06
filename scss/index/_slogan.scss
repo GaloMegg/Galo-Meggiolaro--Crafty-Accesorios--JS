@@ -1,0 +1,34 @@
+.slogan{
+    .slogan__catchyPhrase {
+        display: flex;
+        position: relative;
+        justify-content: center;
+        background-color: white;
+        padding-top: 2%;
+        width: 100%;        
+        background-image: linear-gradient(to bottom, white, rgb(199, 171, 186))
+    }
+    .slogan__sloganClass {
+        font-size: $fontSizeCatchy;
+        font-family: $fontFamily;
+        font-weight: $fontWeight;
+    }
+    
+}
+
+/*PC's*/
+@media (min-width: 981px) and (max-width:2400px){
+    .slogan{
+    .slogan__sloganClass{
+        font-size: 1.5rem;
+    }
+}
+}
+/*4k*/
+@media (min-width: 2401px) and (max-width:10000px){
+.slogan{
+    .slogan__sloganClass {
+        font-size: 3rem;
+    }
+}
+}

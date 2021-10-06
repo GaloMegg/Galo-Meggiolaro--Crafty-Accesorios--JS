@@ -1,0 +1,26 @@
+.enviosGrid {
+    grid-template-areas: "nav nav nav nav" "info info info info"  "breadCrumbs breadCrumbs breadCrumbs breadCrumbs" "footer footer footer footer";
+
+.nave {
+    grid-area: nav;
+}
+.infoShp {
+    grid-area: info;
+} 
+.breadCrumbs{
+    grid-area: breadCrumbs;
+}
+.footer {
+    grid-area: footer;
+}
+
+.sticky__Item {
+    position: sticky;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: space-evenly;
+    top: 0%;
+    background-color: white;
+}
+}
