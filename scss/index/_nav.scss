@@ -1,97 +1,99 @@
 nav {
-    padding-bottom: 1%;
-    display: flex;
-    justify-content: space-evenly;
-    position: relative;
-    font-family: $fontFamily;
-    font-size: $fontSizeNav;
-    font-weight: $fontWeight;
-    margin-top: 1%;
-    text-align: center;
-    .blur-out-expand{
-        
-        @include animationNav;
+  padding-bottom: 1%;
+  display: flex;
+  justify-content: space-evenly;
+  position: relative;
+  font-family: $fontFamily;
+  font-size: $fontSizeNav;
+  font-weight: $fontWeight;
+  margin-top: 1%;
+  text-align: center;
+  .cart--image {
+      width: 10%;
+    .cart--image--try {
+        width: 20%
     }
-    .linksNav {
-        @include link;
-    
+  }
+  .blur-out-expand {
+    @include animationNav;
+  }
+  .linksNav {
+    @include link;
+  }
+  .linksNav:hover {
+    @include linkHover;
+  }
+  .hoverNav {
+    &:hover .absoluteNav {
+      display: block;
+      position: absolute;
+      text-align: center;
     }
-    .linksNav:hover {
-        @include linkHover;
-    }
-    .hoverNav {
-    
-        &:hover .absoluteNav {
-        display: block;
-        position: absolute;
-        text-align: center;
+    .absoluteNav {
+      display: none;
+      @include nolist;
+      background-color: rgb(231, 222, 222);
+      .productNav {
+        padding: 5%;
+        &:hover .reMarginedList {
+          display: block;
+          position: relative;
         }
-        .absoluteNav {
-        display: none;
-        @include nolist;
-        background-color: rgb(231, 222, 222);
-            .productNav {
-                padding: 5%;
-                &:hover .reMarginedList {
-                display: block;
-            position: relative;
-            }
         .reMarginedList {
-            @include nolist;
-            display: none;
-            .product {
+          @include nolist;
+          display: none;
+          .product {
             background-color: $darkerBackground;
             padding: 2%;
             text-align: center;
             border-bottom: 1px solid black;
             border-top: 1px solid black;
             margin: 1.5%;
-            
-            }
-            }
+          }
         }
+      }
     }
-    }
+  }
 }
 
 @-webkit-keyframes blur-out-expand {
-    0% {
+  0% {
     -webkit-filter: blur(0.01);
     filter: blur(0.01);
-    }
-    100% {
+  }
+  100% {
     letter-spacing: 1em;
     -webkit-filter: blur(12px) opacity(0%);
     filter: blur(12px) opacity(0%);
-    }
+  }
 }
 @keyframes blur-out-expand {
-    0% {
+  0% {
     -webkit-filter: blur(0.01);
     filter: blur(0.01);
-    }
-    100% {
+  }
+  100% {
     letter-spacing: 1em;
     -webkit-filter: blur(12px) opacity(0%);
     filter: blur(12px) opacity(0%);
-    }
+  }
 }
 
 /*PC's*/
 @media (min-width: 981px) and (max-width: 2400px) {
-    nav {
+  nav {
     font-size: 1.2rem;
     .linksNav {
-        @include link(1.2rem);
+      @include link(1.2rem);
     }
-    }
+  }
 }
 /*4k*/
 @media (min-width: 2401px) and (max-width: 10000px) {
-    nav {
+  nav {
     font-size: 2rem;
     .linksNav {
-        @include link(2rem);
+      @include link(2rem);
     }
-    }
+  }
 }
