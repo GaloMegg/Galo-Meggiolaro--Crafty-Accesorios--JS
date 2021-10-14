@@ -1,0 +1,73 @@
+.cartButton {
+  width: 100%;
+  z-index: 10;
+  position: fixed;
+  display: flex;
+  justify-content: flex-end;
+  .cart--image {
+    width: 12%;
+    @include link;
+    .cartBackground {
+      margin: 5%;
+      background-color: $darkerBackground;
+      border-radius: 60px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .cart--image--try {
+        width: 50%;
+        padding: 1%;
+      }
+      .cartCountingItems {
+        font-size: 0.8rem;
+        padding: 1%;
+        margin: 0%;
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+//Tablets
+@media (min-width: 538px) and (max-width: 768px) {
+  .cartButton {
+    .cart--image {
+      width: 8%;
+      @include link;
+      .cartBackground {
+        .cartCountingItems {
+          font-size: 1.2rem;
+        }
+      }
+    }
+  }
+}
+//PC
+@media (min-width: 769px) and (max-width: 2400px) {
+  .cartButton {
+    .cart--image {
+      width: 5%;
+      @include link;
+      .cartBackground {
+        .cartCountingItems {
+          font-size: 1.2rem;
+        }
+      }
+    }
+  }
+}
+
+//4K
+@media (min-width: 2401px) and (max-width: 999999px) {
+  .cartButton {
+    .cart--image {
+      width: 5%;
+      @include link;
+      .cartBackground {
+        .cartCountingItems {
+          font-size: 2rem;
+        }
+      }
+    }
+  }
+}

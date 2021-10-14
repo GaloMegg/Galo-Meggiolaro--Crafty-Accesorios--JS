@@ -8,12 +8,7 @@ nav {
   font-weight: $fontWeight;
   margin-top: 1%;
   text-align: center;
-  .cart--image {
-      width: 10%;
-    .cart--image--try {
-        width: 20%
-    }
-  }
+  
   .blur-out-expand {
     @include animationNav;
   }

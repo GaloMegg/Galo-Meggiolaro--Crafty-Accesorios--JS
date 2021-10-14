@@ -1,6 +1,6 @@
-*{
-    margin: 0;
-    padding: 0;
+* {
+  margin: 0;
+  padding: 0;
 }
 
 /*Bootstap*/
@@ -12,6 +12,7 @@
 @import "index/index";
 @import "index/header";
 @import "index/nav";
+@import "index/cart";
 @import "index/landing";
 @import "index/slogan";
 @import "index/maininfo";
@@ -27,7 +28,6 @@
 @import "product/buybutton";
 @import "product/pslogan";
 
-
 /*Envio*/
 @import "envios/enviosGrid";
 @import "envios/rightleft";
@@ -37,4 +37,3 @@
 @import "whoarewe/whoweare";
 @import "whoarewe/landing";
 @import "error/error.scss";
-
