@@ -67,7 +67,7 @@
                 </ul>
             </div>
             <div>
-                <a href="quienessomos.html" class=" linksNav blur-out-expand">¿Quiénes somos?</a>
+                <a href="../whoarewe/quienessomos.html" class=" linksNav blur-out-expand">¿Quiénes somos?</a>
             </div>
             <div>
                 <a href="../index.html#jumpToCatchy" class=" linksNav blur-out-expand">Contacto</a>
@@ -78,18 +78,21 @@
         </nav>
         <!-- finishNav -->
     </div>
-    <div class="container">
-        <div class="row">
-            <div class="insertClone">
-                <img src="images/anillo.jpg" alt="">
-                <p>Nombre: <span></span></p>
-                <p>Apellido: <span></span></p>
-                <p>Precio:</p>
-            </div>
+    <section class="cart">
+        <div class="cart__item" >
         </div>
-    </div>
-
+    </section>
+    <template class="" id="cart__item--template">
+        <div class="cart__item--try">
+            <img alt="" class="cart__item--img">
+            <p class="cart__item--name">Nombre: <span class="name--variable"></span></p>
+            <p class="cart__item--price">Precio: <span class="price--variable"></span></p>
+            <p class="cart__item--material">Material: <span class="material--variable"></span></p>
+            <img src="images/x.svg" alt="" class="cart__item--delete">
+        </div>
+    </template>
     <script src="../js/app.js"></script>
+    <script src="../js/render.js"></script>
 </body>
 
 </html>

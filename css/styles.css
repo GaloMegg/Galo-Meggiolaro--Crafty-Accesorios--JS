@@ -8753,3 +8753,24 @@ nav {
       color: #c7abba; }
   .flexError a:hover {
     text-decoration: none; }
+
+/* Cart*/
+.cart .cart__item {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap; }
+  .cart .cart__item .cart__item--try {
+    max-width: 36%;
+    margin: 2%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; }
+    .cart .cart__item .cart__item--try .cart__item--img {
+      width: 78%; }
+    .cart .cart__item .cart__item--try .cart__item--delete {
+      width: 15%; }
+    .cart .cart__item .cart__item--try p {
+      margin: 0%;
+      font-size: 0.8rem;
+      text-align: center; }
