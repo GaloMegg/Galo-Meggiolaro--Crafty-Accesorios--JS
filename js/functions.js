@@ -1,12 +1,20 @@
 function CartAdding(e) {
   if (e.target.classList.contains("aro")) {
-    CartAddingObject(aro);
+    for (i = 0; i < quantity; i++) {
+      CartAddingObject(aro);
+    }
   } else if (e.target.classList.contains("collar")) {
-    CartAddingObject(collar);
+    for (i = 0; i < quantity; i++) {
+      CartAddingObject(collar);
+    }
   } else if (e.target.classList.contains("anillo")) {
-    CartAddingObject(anillo);
+    for (i = 0; i < quantity; i++) {
+      CartAddingObject(anillo);
+    }
   } else if (e.target.classList.contains("cenicero")) {
-    CartAddingObject(cenicero);
+    for (i = 0; i < quantity; i++) {
+      CartAddingObject(cenicero);
+    }
   }
 }
 //
