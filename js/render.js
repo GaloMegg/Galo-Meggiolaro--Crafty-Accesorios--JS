@@ -1,59 +1,16 @@
+//Se trae el carrito actualizado de la compra
 cart = JSON.parse(localStorage.getItem("cart"));
+//Se Selecciona el padre donde se inserta el hijo y el nodo a clonar
 const parentElementRender = document.querySelector(".cart__item");
 const renderedElement = document.querySelector(".cart__item--template").content;
 let literalCart = JSON.parse(localStorage.getItem("literalCart")) || [];
-
+//Se renderiza la imagen clonando un nodo
 if (renderedElement) {
   Render(cart);
-}
-function Render(array) {
-  array.forEach((element) => {
-    renderedElement
-      .querySelector(".cart__item--img")
-      .setAttribute("src", `../cart/images/${element.nombre}.jpg`);
-    renderedElement.querySelector(".name--variable").textContent =
-      element.nombre;
-    renderedElement.querySelector(".price--variable").textContent =
-      element.precio;
-    renderedElement.querySelector(".material--variable").textContent =
-      element.material;
-    renderedElement.querySelector(".quantity--variable").textContent =
-      element.cantidad;
-    renderedElement
-      .querySelector(".cart__item--delete")
-      .setAttribute("data-id", `${element.id}`);
-    renderedElement
-      .querySelector(".cart__item--delete")
-      .setAttribute("data-quantity", `${element.cantidad}`);
-    let clone = document.importNode(renderedElement, true);
-    parentElementRender.appendChild(clone);
-  });
-}
-
-const deleteRenderIcon = document.querySelectorAll(".cart__item--delete");
-deleteRenderIcon.forEach((product) =>
-  product.addEventListener("click", DeleteRender)
-);
-
-function DeleteRender(e) {
-  e.target.parentElement.remove();
-  DeleteCart(e.target.dataset.id);
-  DeleteLiteralCart(e.target);
-}
-
-function DeleteCart(item) {
-  let deleteable = cart.findIndex((product) => {
-    product.id == item;
-  });
-  cart.splice(deleteable, 1);
-  localStorage.setItem("cart", JSON.stringify(cart));
-}
-
-function DeleteLiteralCart(item) {
-  let deleteable = literalCart.findIndex(
-    (product) => product.id == item.dataset.id
+  //Se designa la imagen con clase --delete
+  const deleteRenderIcon = document.querySelectorAll(".cart__item--delete");
+  deleteRenderIcon.forEach((product) =>
+    //para cada imagen con clase --delete se da la funcion controladora que elimina del dom, elimina delos arrays y actualiza lo storage
+    product.addEventListener("click", DeleteRender)
   );
-  let deleteableQuantity = item.dataset.quantity;
-  literalCart.splice(deleteable, deleteableQuantity);
-  localStorage.setItem("literalCart", JSON.stringify(literalCart));
 }
