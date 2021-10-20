@@ -1,25 +1,28 @@
-//Objetos predefinido sobre los productos que se venden en la pagina
 const aro = {
   nombre: "aro",
   precio: 300,
-  material: "Alambre y joya fantasía",
+  material: "acero inoxidable",
+  cantidad: 1,
   id: 1,
-};
-const collar = {
-  nombre: "collar",
-  precio: 600,
-  material: "Hilo chino y perlas fantasía",
-  id: 2,
 };
 const anillo = {
   nombre: "anillo",
-  precio: 400,
-  material: "Arcilla polimerica",
+  precio: 350,
+  material: "arcilla polimerica",
+  cantidad: 1,
+  id: 2,
+};
+const collar = {
+  nombre: "collar",
+  precio: 450,
+  material: "hilo chino y joyas fantasía",
+  cantidad: 1,
   id: 3,
 };
 const cenicero = {
   nombre: "cenicero",
-  precio: 1200,
-  material: "Resina e-poxi",
+  precio: 950,
+  material: "resina e-poxi",
+  cantidad: 1,
   id: 4,
 };

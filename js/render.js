@@ -1,37 +1,59 @@
-//Selecciono
-//1) El template para renderizar las cards de los objetos en la pagina cart
-//2)El padre donde seran insertadas las Cards(3)
-const renderingCart = document.querySelector(`#cart__item--template`).content;
-const parentRenderingCart = document.querySelector(".cart__item");
+cart = JSON.parse(localStorage.getItem("cart"));
+const parentElementRender = document.querySelector(".cart__item");
+const renderedElement = document.querySelector(".cart__item--template").content;
+let literalCart = JSON.parse(localStorage.getItem("literalCart")) || [];
 
-//Para cara producto en el carrito se renderiza:
-cart.forEach((product) => {
-  //El data ID con el que sera identificado el objeto
-  renderingCart
-    .querySelector(`.cart__item--try`)
-    .setAttribute(`data-id`, `${product.id}`);
-  //La imagen del objeto
-  renderingCart
-    .querySelector(".cart__item--img")
-    .setAttribute("src", `../cart/images/${product.nombre}.jpg`);
-  //El nombre del prducto
-  renderingCart.querySelector(".name--variable").textContent = product.nombre;
-  //El precio del producto
-  renderingCart.querySelector(".price--variable").textContent = product.precio;
-  //El material que lo compone
-  renderingCart.querySelector(".material--variable").textContent =
-    product.material;
-  //Se clona la el template con su contenido
-  let card = document.importNode(renderingCart, true);
-  //Se le adjunto un hijo al div padre
-  parentRenderingCart.appendChild(card);
-});
+if (renderedElement) {
+  Render(cart);
+}
+function Render(array) {
+  array.forEach((element) => {
+    renderedElement
+      .querySelector(".cart__item--img")
+      .setAttribute("src", `../cart/images/${element.nombre}.jpg`);
+    renderedElement.querySelector(".name--variable").textContent =
+      element.nombre;
+    renderedElement.querySelector(".price--variable").textContent =
+      element.precio;
+    renderedElement.querySelector(".material--variable").textContent =
+      element.material;
+    renderedElement.querySelector(".quantity--variable").textContent =
+      element.cantidad;
+    renderedElement
+      .querySelector(".cart__item--delete")
+      .setAttribute("data-id", `${element.id}`);
+    renderedElement
+      .querySelector(".cart__item--delete")
+      .setAttribute("data-quantity", `${element.cantidad}`);
+    let clone = document.importNode(renderedElement, true);
+    parentElementRender.appendChild(clone);
+  });
+}
 
-//Se selecciona el div contenedor de los productos con sus imagenes para retirarlos de array card, y del renderizao
-const deleteItem = document.querySelectorAll(`.cart`);
-//para cada elemento del nodelist se le asigna un evento de click
-deleteItem.forEach((element) => {
-  element.addEventListener("click", Deleting);
-});
+const deleteRenderIcon = document.querySelectorAll(".cart__item--delete");
+deleteRenderIcon.forEach((product) =>
+  product.addEventListener("click", DeleteRender)
+);
 
+function DeleteRender(e) {
+  e.target.parentElement.remove();
+  DeleteCart(e.target.dataset.id);
+  DeleteLiteralCart(e.target);
+}
 
+function DeleteCart(item) {
+  let deleteable = cart.findIndex((product) => {
+    product.id == item;
+  });
+  cart.splice(deleteable, 1);
+  localStorage.setItem("cart", JSON.stringify(cart));
+}
+
+function DeleteLiteralCart(item) {
+  let deleteable = literalCart.findIndex(
+    (product) => product.id == item.dataset.id
+  );
+  let deleteableQuantity = item.dataset.quantity;
+  literalCart.splice(deleteable, deleteableQuantity);
+  localStorage.setItem("literalCart", JSON.stringify(literalCart));
+}
