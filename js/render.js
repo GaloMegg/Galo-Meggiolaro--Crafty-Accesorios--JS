@@ -1,6 +1,7 @@
+//Se llaman los carritos para ser renderizados y manipulados
 cart = JSON.parse(localStorage.getItem("cart")) || [];
 literalCart = JSON.parse(localStorage.getItem("literalCart")) || [];
-
+//Para cada item en el carrito cart se renderiza un child el cual es adjuntado al padre
 cart.forEach((element) => {
   $(".cart__item").append(`
     <div class="cart__item--try" data-id="${element.id}">
@@ -12,24 +13,8 @@ cart.forEach((element) => {
               <img src="images/x.svg" alt="" class="cart__item--delete" data-quantity = "${element.cantidad}" data-id=${element.id}>
           </div>`);
 });
-
+//Se selecciona las imagenes de borrar items para añadirles los eventos clicks y poder eliminar los padres del dom y del carrito
 let deleter = document.querySelectorAll(".cart__item--delete");
 deleter.forEach((element) => {
   element.addEventListener("click", DeleteItems);
 });
-function DeleteItems(e) {
-  e.target.parentElement.remove();
-  DeleteCart(e.target.dataset.id);
-  DeleteLiteralCart(e.target.dataset.id, e.target.dataset.quantity);
-}
-
-function DeleteCart(item) {
-  let deleteable = cart.findIndex((product) => product.id == item);
-  cart.splice(deleteable, 1);
-  localStorage.setItem("cart", JSON.stringify(cart));
-}
-function DeleteLiteralCart(item, quantity) {
-  let deleteable = literalCart.findIndex((product) => product.id == item);
-  literalCart.splice(deleteable, quantity);
-  localStorage.setItem("literalCart", JSON.stringify(literalCart));
-}
