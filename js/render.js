@@ -5,7 +5,8 @@ const parentElementRender = document.querySelector(".cart__item");
 const renderedElement = document.querySelector(".cart__item--template").content;
 let literalCart = JSON.parse(localStorage.getItem("literalCart")) || [];
 //Se renderiza la imagen clonando un nodo
-if (renderedElement) {
+if (renderedElement && cart) {
+  parentElementRender.replaceChildren(" ");
   Render(cart);
   //Se designa la imagen con clase --delete
   const deleteRenderIcon = document.querySelectorAll(".cart__item--delete");
