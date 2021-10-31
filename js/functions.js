@@ -51,12 +51,14 @@ function DeleteLiteralCart(item, quantity) {
   literalCart.splice(deleteable, quantity);
   localStorage.setItem("literalCart", JSON.stringify(literalCart));
 }
-
+//Se renderiza el total y se inserta en el landing del carrito
 function RenderingTotal(literalCart) {
   let totalPrice = 0;
   for (const product of literalCart) {
     totalPrice = totalPrice + product.precio;
   }
+
+  //Si hay objetos en los carritos se elimina cualquier registro anterior, para no sumar hijos a resultados anteriores. Se renderiza y se adjuntan al padre el total actualizado dinamicamente. y se deja entrar al button de limpieza de carrito. Cuando se hace click en el boton cada objeto renderizado del carrito se oculta del dom y se elimina del carrito(eliminandolo del dom) y se vuelve a disparar la funcion para declinar en el "else"
   if (totalPrice > 0) {
     $(".total__centered").empty();
     $(".total__centered")
@@ -86,9 +88,10 @@ function RenderingTotal(literalCart) {
       literalCart = [];
       localStorage.setItem("literalCart", JSON.stringify(literalCart));
       localStorage.setItem("cart", JSON.stringify(cart));
-      RenderingTotal(literalCart)
+      RenderingTotal(literalCart);
     }
   } else {
+    //Si no hay nada en el carrito se elimina cualquier registro anterior para evitar errores. se añade el texto que no hay items y se ofrece un boton para redirigirse al inicio con una animacion de entrada.
     $(".total__centered").empty();
     $(".total__centered")
       .append(
