@@ -7,4 +7,3 @@ $(".buy__Button--quantity").on("click", quantityValue);
 $(".cartCountingItems").text(literalCart.length);
 
 let quantity;
-

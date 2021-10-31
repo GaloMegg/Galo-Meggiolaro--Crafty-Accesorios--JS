@@ -1,0 +1,28 @@
+.total {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background-color: $darkerBackground;
+  .total__centered {
+    font-family: $fontFamily;
+    font-weight: $fontWeight;
+    padding: 1%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    .total__centered--text {
+      font-size: 1.4rem;
+      margin: 0%;
+    }
+    .total__centered--text--a {
+      @include link;
+      font-size: 1.4rem;
+      margin: 0%;
+    }
+    .eraser {
+      @include buttonForm;
+      width: 100%;
+    }
+  }
+}

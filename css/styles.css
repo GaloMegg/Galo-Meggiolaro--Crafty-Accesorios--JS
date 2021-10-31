@@ -8774,3 +8774,43 @@ nav {
       margin: 0%;
       font-size: 0.8rem;
       text-align: center; }
+
+.total {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background-color: #c7abba; }
+  .total .total__centered {
+    font-family: "Martel", serif;
+    font-weight: bold;
+    padding: 1%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center; }
+    .total .total__centered .total__centered--text {
+      font-size: 1.4rem;
+      margin: 0%; }
+    .total .total__centered .total__centered--text--a {
+      color: black;
+      text-decoration: none;
+      font-family: "Martel", serif;
+      font-size: 0.9rem;
+      font-weight: bold;
+      font-size: 1.4rem;
+      margin: 0%; }
+    .total .total__centered .eraser {
+      width: 50%;
+      background-color: #e4bbcc;
+      border: 0.5px solid black;
+      border-radius: 16px;
+      height: 5.5vh;
+      margin: 1%;
+      font-family: "Playfair Display", serif;
+      font-size: 1rem;
+      width: 100%; }
+      .total .total__centered .eraser:hover {
+        background-color: #c7abba;
+        box-shadow: 0px 15px 20px #e4bbcc;
+        color: #fff;
+        transform: translateY(-6px); }

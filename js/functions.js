@@ -37,6 +37,7 @@ function DeleteItems(e) {
   e.target.parentElement.remove();
   DeleteCart(e.target.dataset.id);
   DeleteLiteralCart(e.target.dataset.id, e.target.dataset.quantity);
+  RenderingTotal(literalCart);
 }
 //Se buscan los index de los elementos eliminados que coinciden con los ids de los elementos del carrito. y se elimina ese index
 function DeleteCart(item) {
@@ -49,4 +50,59 @@ function DeleteLiteralCart(item, quantity) {
   let deleteable = literalCart.findIndex((product) => product.id == item);
   literalCart.splice(deleteable, quantity);
   localStorage.setItem("literalCart", JSON.stringify(literalCart));
+}
+
+function RenderingTotal(literalCart) {
+  let totalPrice = 0;
+  for (const product of literalCart) {
+    totalPrice = totalPrice + product.precio;
+  }
+  if (totalPrice > 0) {
+    $(".total__centered").empty();
+    $(".total__centered")
+      .append(
+        `
+        <h2 class="total__centered--text">
+        El total es de ${totalPrice}
+        </h2
+        `
+      )
+      .fadeIn(2000, function () {
+        $(".total__centered").append(
+          `<button class="eraser">Limpiar carrito</button>`
+        );
+      });
+
+    $(".eraser").on("click", DeletingAllRendered);
+
+    function DeletingAllRendered(e) {
+      e.preventDefault();
+      $(".cart__item--try").each(function (i) {
+        $(this)
+          .delay(i * 200)
+          .fadeOut(800);
+      });
+      cart = [];
+      literalCart = [];
+      localStorage.setItem("literalCart", JSON.stringify(literalCart));
+      localStorage.setItem("cart", JSON.stringify(cart));
+      RenderingTotal(literalCart)
+    }
+  } else {
+    $(".total__centered").empty();
+    $(".total__centered")
+      .append(
+        `
+      <h2 class="total__centered--text">
+      No tienes productos en el carrito.
+      </h2
+          `
+      )
+      .hide()
+      .fadeIn(2000, function () {
+        $(".total__centered").append(
+          `<a class="total__centered--text--a " href="../index.html">Inicio</a>`
+        );
+      });
+  }
 }
