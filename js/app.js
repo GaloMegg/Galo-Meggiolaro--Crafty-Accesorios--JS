@@ -7,3 +7,15 @@ $(".buy__Button--quantity").on("click", quantityValue);
 $(".cartCountingItems").text(literalCart.length);
 
 let quantity;
+$.ajax({
+  url: `https://api.mercadolibre.com/users/1645198831423950
+  /shipping_options?zip_code=1113&quantity=2`,
+  method: "GET",
+  datatype: "JSON",
+  success: function (data) {
+    console.log(data);
+  },
+  error: function (error) {
+    console.log(`12121`);
+  },
+});

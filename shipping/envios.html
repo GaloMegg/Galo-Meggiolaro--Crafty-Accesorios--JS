@@ -118,7 +118,7 @@
                     </p>
 
                     <div>
-                        <form class="enviosForm" action="">
+                        <form class="enviosForm" method="GET" action="https://auth.mercadolibre.com.ar/authorization?response_type=code&client_id=1185283745146808&redirect_uri=http://127.0.0.1:5500/shipping/envios.html">
                             <input type="text" required class="shippingForm" placeholder="CP"
                                 aria-label="codigo postal" />
                             <select name="" id="" class="shippingForm">
@@ -130,7 +130,7 @@
                                     Moto-mensajería
                                 </option>
                             </select>
-                            <button class="shippingForm buttonForm">Calcular</button>
+                            <button class="shippingForm buttonForm" >Calcular</button>
                         </form>
                     </div>
                 </div>
