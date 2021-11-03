@@ -109,3 +109,27 @@ function RenderingTotal(literalCart) {
       });
   }
 }
+//funcion construtora para los mensajes nuevos
+class SendMesage {
+  constructor(
+    userName,
+    secondName,
+    phoneNumber,
+    email,
+    emailOrPhone,
+    telefonoOrPhone,
+    gender,
+    whatsapp,
+    proyect
+  ) {
+    (this.name = userName),
+      (this.secondName = secondName),
+      (this.phoneNumber = phoneNumber),
+      (this.email = email),
+      (this.emailOrPhone = emailOrPhone),
+      (this.telefonoOrPhone = telefonoOrPhone),
+      (this.gender = gender),
+      (this.whatsapp = whatsapp),
+      (this.proyect = proyect);
+  }
+}
