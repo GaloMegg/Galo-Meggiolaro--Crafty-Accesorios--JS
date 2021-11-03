@@ -9,3 +9,4 @@ $(".cartCountingItems").text(literalCart.length);
 let quantity;
 
 
+$("")
