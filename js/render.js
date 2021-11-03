@@ -19,6 +19,4 @@ deleter.forEach((element) => {
   element.addEventListener("click", DeleteItems);
 });
 //Se renderiza el total inicial, luego cada actualizacion esta atada a las fnciones de eliminacion y re-renderizado
-
-
-
+RenderingTotal(literalCart);
