@@ -211,7 +211,7 @@
         <!-- finishCarrousel -->
         <!-- contactForm -->
         <article class="contact shadow-drop-center" id="jumpToCatchy">
-            <Form class="fieldSet" method="POST">
+            <Form class="fieldSet" method="POST" action="https://formcarry.com/s/nHDcg4Oxd9Q">
                 <fieldset class="shadow-drop-2-center">
                     <div class="proyectContainer">
                         <h3>Contactenos</h3>
@@ -222,7 +222,7 @@
                         <input name="apellido" id="apellido" type="Text" required placeholder="Apellido"
                             class="proyecto shadow-drop-2-center">
                         <label for="telefono">Número de telefono:</label>
-                        <input id="telefono" type="number" required placeholder="Telefono"
+                        <input name="phoneNumber" id="telefono" type="number" required placeholder="Telefono"
                             class="shadow-drop-2-center proyecto">
                         <label for="email">Email:</label>
                         <input name="email" type="email" id="email" required placeholder="Email"
@@ -230,7 +230,7 @@
                         <label for="teleoemail">¿Como prefieres que nos contactemos?</label>
                         <br>
                         <label for="emailradio">Email</label>
-                        <input id="emailradio" name="teleoemail" class="radioCheck" type="radio" required value="Email">
+                        <input name="teleoemail" id="emailradio" class="radioCheck" type="radio" required value="Email">
                         <label for="teleradio">Telefono</label>
                         <input name="teleoemail" class="radioCheck" type="radio" required value="Telefono"
                             id="teleradio">
@@ -251,10 +251,11 @@
                     </div>
                     <div class="proyectContainer">
                         <label for="proyecto">Cuentanos tu proyecto</label>
-
-                        <textarea name="protecto" id="proyecto" class="shadow-drop-2-center proyecto"></textarea>
+                        <textarea name="proyecto" id="proyecto" class="shadow-drop-2-center proyecto"></textarea>
                         <div class="contactButtons">
-                            <input type="submit" class="buttonForm submitButton" aria-label="enviar">
+                            <input type="submit" class="buttonForm submitButton" aria-label="enviar" value="send">
+                            <input type="hidden" name="_next"
+                                value="https://galomegg.github.io/craftyaccs/#jumpToCatchy">
                             <input type="reset" class="buttonForm " aria-label="restablecer">
                         </div>
                     </div>
@@ -332,6 +333,7 @@
 
     <script src="js/bootstrap.js"></script>
     <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <script src="js/objects.js"></script>
     <script src="js/functions.js"></script>
     <script src="js/form.js"></script>

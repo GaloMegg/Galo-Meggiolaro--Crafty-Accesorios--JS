@@ -1,4 +1,20 @@
-//Se declara el array con el valor existente en el storage si es que existe y si no se lo declara vacio
-let messageSent = JSON.parse(localStorage.getItem("proyects"))||[];
-//Se añade el evento click al botton submit del formulario.
-$(".submitButton").on("click", SentForm);
+
+$(function(){
+    $(".submitButton").submit(function(e){
+        e.preventDefault();
+        let href = $(this).attr("action");
+        $.ajax({
+            type: "POST",
+            dataType: "json",
+            url: href,
+            data: $(this).serialize(),
+            success: function(response){
+                if(response.status == "success"){
+                    alert("We received your submission, thank you!");
+                }else{
+                    alert("An error occured: " + response.message);
+                }
+            }
+        });
+    });
+});
