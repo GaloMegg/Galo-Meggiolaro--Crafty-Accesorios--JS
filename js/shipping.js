@@ -3,15 +3,14 @@ $.ajax({
   url: "../js/shippingcost.json",
   success: function (data) {
     cost = data;
-    console.log(cost);
   },
 });
 $(".sentButton__restOf").on("click", PayForRestOfArgentina);
 $(".sentButton__caba").on("click", PayForCaba);
 
 function PayForCaba(e) {
-  $(".caba__cost").text("");
   e.preventDefault();
+  $(".caba__cost").text("");
   let cabaOptions = $("#cabaoptions:input").val();
   let cp = parseInt($(".shippingForm__caba--cp").val());
 
@@ -24,17 +23,17 @@ function PayForCaba(e) {
   }
 }
 function PayForRestOfArgentina(e) {
-  $(".caba__cost").text("");
   e.preventDefault();
-  let cabaOptions = $("#restOfOptions:input").val();
-  let cp = parseInt($(".shippingForm__caba--cp").val());
+  $(".restOf__cost").text("");
+  let restOfOptions = $("#restOfOptions:input").val();
+  let cp = parseInt($(".shippingForm__restOf--cp").val());
 
-  if (cabaOptions == "mercadoEnvios") {
-    CalculateCostsRestOfArgentina(cabaOptions, cost, cp);
-  } else if (cabaOptions == "oca") {
-    CalculateCostsRestOfArgentina(cabaOptions, cost, cp);
+  if (restOfOptions == "mercadoEnvios") {
+    CalculateCostsRestOfArgentina(restOfOptions, cost, cp);
+  } else if (restOfOptions == "oca") {
+    CalculateCostsRestOfArgentina(restOfOptions, cost, cp);
   } else {
-    CalculateCostsRestOfArgentina(cabaOptions, cost, cp);
+    CalculateCostsRestOfArgentina(restOfOptions, cost, cp);
   }
 }
 
@@ -52,17 +51,27 @@ function CalculateCostsCaba(cabaOptions, cost, cp) {
     console.log(`no es buenos aires`);
   }
 }
-function CalculateCostsRestOfArgentina(cabaOptions, cost, cp) {
-  if (cp > 999 && cp < 1201) {
-    let renderCost = cost[1][`${cabaOptions}`][0];
+function CalculateCostsRestOfArgentina(restOfOptions, cost, cp) {
+  if (cp > 1899 && cp < 4001) {
+    let renderCost = cost[1][`${restOfOptions}`][0];
     $(".restOf__cost").text(`${renderCost}`);
-  } else if (cp > 1200 && cp < 1501) {
-    let renderCost = cost[1][`${cabaOptions}`][1];
+  } else if (cp > 4000 && cp < 7001) {
+    let renderCost = cost[1][`${restOfOptions}`][1];
     $(".restOf__cost").text(`${renderCost}`);
-  } else if (cp > 1500 && cp < 1900) {
-    let renderCost = cost[1][`${cabaOptions}`][2];
+  } else if (cp > 7000 && cp < 9500) {
+    let renderCost = cost[1][`${restOfOptions}`][2];
     $(".restOf__cost").text(`${renderCost}`);
   } else {
     console.log(`no es buenos aires`);
   }
+}
+
+$(".shippingForm__date").on("click", DateAppointment);
+
+function DateAppointment(e) {
+  e.preventDefault();
+  let when = $(".day").val();
+  let who = $(".appointmentName").val();
+  //eliminar contenido, cargar al storage crear un boton para eliminar del storage modificcar el dom para mostrar la prenotazione
+
 }

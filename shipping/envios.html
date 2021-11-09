@@ -136,13 +136,13 @@
 
                     <div>
                         <form class="enviosForm" action="">
-                            <input type="text" required class="shippingForm shippingForm--restOf" placeholder="CP"
+                            <input type="text" required class="shippingForm shippingForm__restOf--cp" placeholder="CP"
                                 aria-label="codigo postal" />
                             <select name="" id="restOfOptions" class="shippingForm">
-                                <option class="shippingForm" value="Mercado-Envios">
+                                <option class="shippingForm" value="mercadoEnvios">
                                     Mercado-envíos
                                 </option>
-                                <option class="shippingForm" value="OCA">OCA</option>
+                                <option class="shippingForm" value="oca">OCA</option>
                             </select>
                             <button class="shippingForm sentButton__restOf buttonForm" aria-label="calcular">
                                 Calcular
@@ -169,10 +169,10 @@
                     </p>
                     <div>
                         <form class="enviosForm">
-                            <input type="date" class="shippingForm" aria-label="elige dia mes y año " />
-                            <input type="text" required class="shippingForm" placeholder="Nombre"
+                            <input type="date" class="shippingForm day" aria-label="elige dia mes y año " />
+                            <input type="text" required class="shippingForm appointmentName" placeholder="Nombre"
                                 aria-label="ingresa tu nombre" />
-                            <button class="shippingForm buttonForm" aria-label="agendar dia">
+                            <button class="shippingForm shippingForm__date buttonForm" aria-label="agendar dia">
                                 Agendar
                             </button>
                         </form>
