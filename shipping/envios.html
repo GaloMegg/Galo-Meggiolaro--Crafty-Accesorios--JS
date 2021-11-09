@@ -101,37 +101,23 @@
                         Si residís en CABA podes optar por los siguientes medios de
                         envíos:
                     </p>
-
                     <p>
-                        Envío por mercado-envíos<strong> Tiempo de envío: <em class="caba__mercadoEnvios"></em> Costo: <em
-                                class="caba__mercadoEnvios"></em></strong>
-
+                        Envío por <strong> <em class="caba__wayOf"></em> Costo: <em class="caba__cost"></em></strong>
                     </p>
-                    <p>
-                        Moto-mensajería<strong>
-                            Tiempo de envío: <em class="caba__motomensajeria"></em> Costo: <em class="caba__motomensajeria"></em></strong>
-                        </strong>
-                    </p>
-                    <p>
-                        OCA
-                        <strong>
-                            Tiempo de envío: <em class="caba__oca"></em> Costo: <em class="caba__oca"></em></strong>
-                    </p>
-
                     <div>
                         <form class="enviosForm">
-                            <input type="text" required class="shippingForm" placeholder="CP"
+                            <input type="number" required class="shippingForm shippingForm__caba--cp" placeholder="CP"
                                 aria-label="codigo postal" />
-                            <select name="" id="" class="shippingForm">
-                                <option value="Mercado-Envios" class="shippingForm">
+                            <select name="" id="cabaoptions" class="shippingForm">
+                                <option value="mercadoEnvios" class="shippingForm">
                                     Mercado-envíos
                                 </option>
-                                <option value="OCA" class="shippingForm">OCA</option>
-                                <option value="MTMSJ" class="shippingForm">
+                                <option value="oca" class="shippingForm">OCA</option>
+                                <option value="motoMensajeria" class="shippingForm">
                                     Moto-mensajería
                                 </option>
                             </select>
-                            <button class="shippingForm buttonForm">Calcular</button>
+                            <button class="shippingForm sentButton__caba buttonForm">Calcular</button>
                         </form>
                     </div>
                 </div>
@@ -141,32 +127,24 @@
                 <div class="enviosRight">
                     <h3 class="resizeTitles">Resto de Argentina</h3>
                     <p>
-                        Si residís en CABA podes optar por los siguientes medios de
+                        Si residís en el resto de Argentina podes optar por los siguientes medios de
                         envíos:
                     </p>
-
                     <p>
-                        Envío por mercado-envíos
-                        <strong>Tiempo de envío: de 1 a 3 días hábiles Costo: A
-                            calcular.</strong>
-                    </p>
-                    <p>
-                        OCA
-                        <strong>
-                            Tiempo de envío: (a calcular) Costo: (a calcular)</strong>
+                        Envío por <strong> <em class="restOf__wayOf"></em> Costo: <em class="restOf__cost"></em></strong>
                     </p>
 
                     <div>
                         <form class="enviosForm" action="">
-                            <input type="text" required class="shippingForm" placeholder="CP"
+                            <input type="text" required class="shippingForm shippingForm--restOf" placeholder="CP"
                                 aria-label="codigo postal" />
-                            <select name="" id="" class="shippingForm">
+                            <select name="" id="restOfOptions" class="shippingForm">
                                 <option class="shippingForm" value="Mercado-Envios">
                                     Mercado-envíos
                                 </option>
                                 <option class="shippingForm" value="OCA">OCA</option>
                             </select>
-                            <button class="shippingForm buttonForm" aria-label="calcular">
+                            <button class="shippingForm sentButton__restOf buttonForm" aria-label="calcular">
                                 Calcular
                             </button>
                         </form>
