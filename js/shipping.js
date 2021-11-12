@@ -35,6 +35,8 @@ function PayForRestOfArgentina(e) {
   } else {
     CalculateCostsRestOfArgentina(restOfOptions, cost, cp);
   }
+
+  $(".enviosForm--caba").trigger("reset");
 }
 
 function CalculateCostsCaba(cabaOptions, cost, cp) {
@@ -47,8 +49,6 @@ function CalculateCostsCaba(cabaOptions, cost, cp) {
   } else if (cp > 1500 && cp < 1900) {
     let renderCost = cost[0][`${cabaOptions}`][2];
     $(".caba__cost").text(`${renderCost}`);
-  } else {
-    console.log(`no es buenos aires`);
   }
 }
 function CalculateCostsRestOfArgentina(restOfOptions, cost, cp) {
@@ -61,17 +61,31 @@ function CalculateCostsRestOfArgentina(restOfOptions, cost, cp) {
   } else if (cp > 7000 && cp < 9500) {
     let renderCost = cost[1][`${restOfOptions}`][2];
     $(".restOf__cost").text(`${renderCost}`);
-  } else {
-    console.log(`no es buenos aires`);
   }
 }
-
+let appointment = JSON.parse(localStorage.getItem("appointment")) || [];
+if(appointment != [] ){
+  RenderAppointment()
+}
 $(".shippingForm__date").on("click", DateAppointment);
 
 function DateAppointment(e) {
   e.preventDefault();
+  appointment = [];
   let when = $(".day").val();
   let who = $(".appointmentName").val();
-  //eliminar contenido, cargar al storage crear un boton para eliminar del storage modificcar el dom para mostrar la prenotazione
+  appointment.push(when, who);
+  localStorage.setItem("appointment", JSON.stringify(appointment));
+  RenderAppointment();
+}
 
+function RenderAppointment() {
+  $(".appointmentRender").children().fadeOut();
+  $(".appointmentRender").append(`
+  <h4 class="resizeTitles">¡${appointment[1]} ya tenes tu turno para pasar a retirar por nuestro showroom!</h4>
+                    <p>El día ${appointment[0]}</p>
+                    <p>
+                        Recordá respetar la distancia social y lavarte bien las manos si pagás en efectivo.
+                    </p>
+  `).fadeIn()
 }
