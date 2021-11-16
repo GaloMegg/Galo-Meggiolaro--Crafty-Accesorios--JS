@@ -8598,7 +8598,29 @@ nav {
     padding: 1%;
     font-family: "Martel", serif; }
     .shippingFlex .enviosRight .resizeTitles {
-      font-size: 1.2rem; }
+      font-size: 1.2rem;
+      text-transform: lowercase; }
+    .shippingFlex .enviosRight .resizeTitles::first-letter {
+      text-transform: uppercase; }
+    .shippingFlex .enviosRight .aTwo__appointment--name {
+      text-transform: lowercase; }
+    .shippingFlex .enviosRight .aTwo__appointment--name::first-letter {
+      text-transform: uppercase; }
+    .shippingFlex .enviosRight .renderButton {
+      width: 50%;
+      background-color: #c7abba;
+      border: 0.5px solid black;
+      border-radius: 16px;
+      height: 5.5vh;
+      margin: 1%;
+      font-family: "Playfair Display", serif;
+      font-size: 1rem;
+      font-family: "Playfair Display", serif; }
+      .shippingFlex .enviosRight .renderButton:hover {
+        background-color: #c7abba;
+        box-shadow: 0px 15px 20px #c7abba;
+        color: #fff;
+        transform: translateY(-6px); }
     .shippingFlex .enviosRight div .shippingForm {
       font-family: "Martel", serif;
       width: 40%; }
@@ -8619,20 +8641,26 @@ nav {
         transform: translateY(-6px); }
 
 @media (min-width: 981px) and (max-width: 2400px) {
-  .wayOfMap .enviosRight .resizeTitles, .shippingFlex .enviosRight .resizeTitles {
+  .wayOfMap .enviosRight .resizeTitles,
+  .shippingFlex .enviosRight .resizeTitles {
     font-size: 1.8rem; }
-  .wayOfMap .enviosRight p, .shippingFlex .enviosRight p {
+  .wayOfMap .enviosRight p,
+  .shippingFlex .enviosRight p {
     font-size: 1.6rem; }
-  .wayOfMap .enviosRight .shippingForm, .shippingFlex .enviosRight .shippingForm {
+  .wayOfMap .enviosRight .shippingForm,
+  .shippingFlex .enviosRight .shippingForm {
     font-size: 1rem; } }
 
 /*4k*/
 @media (min-width: 2401px) and (max-width: 10000px) {
-  .wayOfMap .enviosRight .resizeTitles, .shippingFlex .enviosRight .resizeTitles {
+  .wayOfMap .enviosRight .resizeTitles,
+  .shippingFlex .enviosRight .resizeTitles {
     font-size: 2.5rem; }
-  .wayOfMap .enviosRight p, .shippingFlex .enviosRight p {
+  .wayOfMap .enviosRight p,
+  .shippingFlex .enviosRight p {
     font-size: 2rem; }
-  .wayOfMap .enviosRight .shippingForm, .shippingFlex .enviosRight .shippingForm {
+  .wayOfMap .enviosRight .shippingForm,
+  .shippingFlex .enviosRight .shippingForm {
     font-size: 1.8rem; } }
 
 /*whoWeAre*/

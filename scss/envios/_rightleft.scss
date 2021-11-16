@@ -1,91 +1,103 @@
+.shippingFlex {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: space-around;
+  background-color: $lighterBackground;
 
-.shippingFlex{
-            display: flex;
-            flex-direction: column;
-            align-items: stretch;
-            justify-content: space-around;
-            background-color: $lighterBackground;
-            
-        .shippingRow{
-            display: flex;
-            justify-content: center;
-            
-            .resizeLeftMap{
-              width: 50%;
-              
-              .map{
-                width: 100%;
-                height: 100%;
-              }
-            }
-            .resizeLeft{
-              width: 50%;
-              background-image: url("../shipping/images/enviosencaba.jpg");
-              background-size: cover;
-              background-position-y: 11%;
-            }
-            .resizeLeftbottom{
-              width: 50%;
-              background-image: url("../shipping/images/restodeargentina.jpg");
-              background-size: cover;
-              background-position-y: 11%;
-            }
-            }
-            .enviosRight{
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                text-align: center;
-                max-width: 50%;
-                padding: 1%;
-                font-family: $fontFamily;
-                .resizeTitles {
-                font-size: $fontSizeCatchy;
-                }
-                div{
-                  .shippingForm{
-                    font-family: $fontFamily;
-                    width: 40%;
-                    
-                  }
-                  .buttonForm{
-                    @include buttonForm ($darkerBackground);
-                    font-family:$buttonFont;
-                  }
-                }
-            }
-      
-          }
-        
+  .shippingRow {
+    display: flex;
+    justify-content: center;
 
+    .resizeLeftMap {
+      width: 50%;
 
-  @media (min-width: 981px) and (max-width:2400px){
-    .wayOfMap, .shippingFlex{
-      .enviosRight{
-        .resizeTitles{
-          font-size: 1.8rem;
-        }
-        p{
-  font-size: 1.6rem;
-        }
-        .shippingForm{
-          font-size: 1rem;
-        }
+      .map {
+        width: 100%;
+        height: 100%;
+      }
+    }
+    .resizeLeft {
+      width: 50%;
+      background-image: url("../shipping/images/enviosencaba.jpg");
+      background-size: cover;
+      background-position-y: 11%;
+    }
+    .resizeLeftbottom {
+      width: 50%;
+      background-image: url("../shipping/images/restodeargentina.jpg");
+      background-size: cover;
+      background-position-y: 11%;
+    }
+  }
+  .enviosRight {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    max-width: 50%;
+    padding: 1%;
+    font-family: $fontFamily;
+    .resizeTitles {
+      font-size: $fontSizeCatchy;
+      text-transform: lowercase;
+    }
+    .resizeTitles::first-letter {
+      text-transform: uppercase;
+    }
+    .aTwo__appointment--name {
+      text-transform: lowercase;
+    }
+    .aTwo__appointment--name::first-letter{
+      text-transform: uppercase;
+
+    }
+    .renderButton {
+      @include buttonForm($darkerBackground);
+      font-family: $buttonFont;
+    }
+    div {
+      .shippingForm {
+        font-family: $fontFamily;
+        width: 40%;
+      }
+      .buttonForm {
+        @include buttonForm($darkerBackground);
+        font-family: $buttonFont;
       }
     }
   }
+}
+
+@media (min-width: 981px) and (max-width: 2400px) {
+  .wayOfMap,
+  .shippingFlex {
+    .enviosRight {
+      .resizeTitles {
+        font-size: 1.8rem;
+      }
+      p {
+        font-size: 1.6rem;
+      }
+      .shippingForm {
+        font-size: 1rem;
+      }
+    }
+  }
+}
 /*4k*/
-@media (min-width: 2401px) and (max-width:10000px){
-  .wayOfMap, .shippingFlex{
-    .enviosRight{
-      .resizeTitles{
+@media (min-width: 2401px) and (max-width: 10000px) {
+  .wayOfMap,
+  .shippingFlex {
+    .enviosRight {
+      .resizeTitles {
         font-size: 2.5rem;
       }
-      p{
-font-size: 2rem;
+      p {
+        font-size: 2rem;
       }
-      .shippingForm{
+      .shippingForm {
         font-size: 1.8rem;
       }
     }
