@@ -1,9 +1,8 @@
-//Se establece el carrito para el dom y el carrito para el carrito visual
+//Both cart are declared. The fisrt one is useful to render objects without duplicating them and the second one is useful to reduce the array to get the totals
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
 let literalCart = JSON.parse(localStorage.getItem("literalCart")) || [];
-//Se estable los eventos para 1- el boton de compra 2- el input de cantidad y 3- se modifica el valor de el texto del carrito con el largo de el carrito literal
-$(".buy__Button").on("click", CartAdding);
-$(".buy__Button--quantity").on("click", quantityValue);
-$(".cartCountingItems").text(literalCart.length);
-
+//The events are attached to the buy buttons and to the inputs of quantity, and in third place the text of the cart icon is being modified.
+$(".buy__Button").on("click", CartAdding); //funtion.js line: 3
+$(".buy__Button--quantity").on("click", quantityValue); //funtion.js line: 32
 let quantity;
+$(".cartCountingItems").text(literalCart.length);
