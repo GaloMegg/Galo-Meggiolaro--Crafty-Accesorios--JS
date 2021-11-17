@@ -42,6 +42,7 @@ $(function () {
         }
       },
     });
+    $("#dateForm").trigger("reset");
   });
 });
 
@@ -64,5 +65,6 @@ $(function () {
         }
       },
     });
+    $("#letUsContact").trigger("reset");
   });
 });

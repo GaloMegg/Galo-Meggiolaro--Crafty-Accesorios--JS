@@ -110,7 +110,6 @@ function RenderingTotal(literalCart) {
   }
 }
 
-
 function PayForCaba(e) {
   e.preventDefault();
   $(".caba__cost").text("");
@@ -183,10 +182,10 @@ function CancelAppointment() {
 }
 function RenderAppointment() {
   $(".aTwo__appointment--name").text(`
-   ${appointment[1] }
+   ${appointment[1]}
     `);
   $(".aTwo__appointment--day").text(`
-   ${appointment[0] }
+   ${appointment[0]}
     `);
   $(".appointmentRender--one").hide();
   $(".appointmentRender--two").fadeIn();
