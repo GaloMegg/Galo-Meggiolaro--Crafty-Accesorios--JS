@@ -56,7 +56,7 @@ $(function () {
       data: $(this).serialize(),
       success: function (response) {
         if (response.status == "success") {
-          alert("¡Te esperamos!");
+          alert("¡En unos momentos nos estaremos comunicando!");
         } else {
           alert(
             "Uy, ¡algo malo paso! Intenta en otro momento..." + response.message
