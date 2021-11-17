@@ -1,3 +1,4 @@
+//app.js
 //app.js line: 5
 //The click event is attached to all the buy buttons. If the button has an especific class, it push the object
 function CartAdding() {
@@ -32,6 +33,7 @@ function PushElements(element) {
 function quantityValue() {
   quantity = $(".buy__Button--quantity:input").val();
 }
+//render.js
 //render.js line: 19
 //The father is deleted from the DOM and all abjects are erased from both carts.
 function DeleteItems(e) {
@@ -59,7 +61,7 @@ function RenderingTotal(literalCart) {
   for (const product of literalCart) {
     totalPrice = totalPrice + product.price;
   }
-  //Si hay objetos en los carritos se elimina cualquier registro anterior, para no sumar hijos a resultados anteriores. Se renderiza y se adjuntan al padre el total actualizado dinamicamente. y se deja entrar al button de limpieza de carrito. Cuando se hace click en el boton cada objeto renderizado del carrito se oculta del dom y se elimina del carrito(eliminandolo del dom) y se vuelve a disparar la funcion para declinar en el "else"
+  //If there are objects in the cart, they are eliminated to clean the cart and to make old logs don't disturb. The first total is rendered and is appended to the father. When the clean btton is on click the rendered objects are hidden, and erased from the cart(the deleted them from the DOM), then the function is fired one more time to enter in the else part.
   if (totalPrice > 0) {
     $(".total__centered").empty();
     $(".total__centered")
@@ -92,7 +94,7 @@ function RenderingTotal(literalCart) {
       RenderingTotal(literalCart);
     }
   } else {
-    //Si no hay nada en el carrito se elimina cualquier registro anterior para evitar errores. se añade el texto que no hay items y se ofrece un boton para redirigirse al inicio con una animacion de entrada.
+    //If there are no items in the cart, the old logs are eliminated to avoid future issues. The text warn that there are no item, and ofers a link to the index.html.
     $(".total__centered").empty();
     $(".total__centered")
       .append(
@@ -110,13 +112,14 @@ function RenderingTotal(literalCart) {
       });
   }
 }
-
+//shipping.js
+//shipping.js line: 10
+//In the CABA shipping options the value of the select input defines the prices of the shipment, in the cp (ZIP) the users must load their own CP
 function PayForCaba(e) {
   e.preventDefault();
   $(".caba__cost").text("");
   let cabaOptions = $("#cabaoptions:input").val();
   let cp = parseInt($(".shippingForm__caba--cp").val());
-
   if (cabaOptions == "mercadoEnvios") {
     CalculateCostsCaba(cabaOptions, cost, cp);
   } else if (cabaOptions == "oca") {
@@ -125,23 +128,7 @@ function PayForCaba(e) {
     CalculateCostsCaba(cabaOptions, cost, cp);
   }
 }
-function PayForRestOfArgentina(e) {
-  e.preventDefault();
-  $(".restOf__cost").text("");
-  let restOfOptions = $("#restOfOptions:input").val();
-  let cp = parseInt($(".shippingForm__restOf--cp").val());
-
-  if (restOfOptions == "mercadoEnvios") {
-    CalculateCostsRestOfArgentina(restOfOptions, cost, cp);
-  } else if (restOfOptions == "oca") {
-    CalculateCostsRestOfArgentina(restOfOptions, cost, cp);
-  } else {
-    CalculateCostsRestOfArgentina(restOfOptions, cost, cp);
-  }
-
-  $(".enviosForm--caba").trigger("reset");
-}
-
+//the ZIP(cp) code is divided into 3 parts in each zones, and the json is manipulated with that options and CP ranks
 function CalculateCostsCaba(cabaOptions, cost, cp) {
   if (cp > 999 && cp < 1201) {
     let renderCost = cost[0][`${cabaOptions}`][0];
@@ -154,6 +141,23 @@ function CalculateCostsCaba(cabaOptions, cost, cp) {
     $(".caba__cost").text(`${renderCost}`);
   }
 }
+//shipping.js line: 11
+//In the rest of Argentina shipping options the value of the select input defines the prices of the shipment, in the cp (ZIP) the users must load their own CP
+function PayForRestOfArgentina(e) {
+  e.preventDefault();
+  $(".restOf__cost").text("");
+  let restOfOptions = $("#restOfOptions:input").val();
+  let cp = parseInt($(".shippingForm__restOf--cp").val());
+  if (restOfOptions == "mercadoEnvios") {
+    CalculateCostsRestOfArgentina(restOfOptions, cost, cp);
+  } else if (restOfOptions == "oca") {
+    CalculateCostsRestOfArgentina(restOfOptions, cost, cp);
+  } else {
+    CalculateCostsRestOfArgentina(restOfOptions, cost, cp);
+  }
+  $(".enviosForm--caba").trigger("reset");
+}
+//the ZIP(cp) code is divided into 3 parts in each zones, and the json is manipulated with that options and CP ranks
 function CalculateCostsRestOfArgentina(restOfOptions, cost, cp) {
   if (cp > 1899 && cp < 4001) {
     let renderCost = cost[1][`${restOfOptions}`][0];
@@ -166,21 +170,8 @@ function CalculateCostsRestOfArgentina(restOfOptions, cost, cp) {
     $(".restOf__cost").text(`${renderCost}`);
   }
 }
-
-function DateAppointment(e) {
-  appointment = [];
-  let when = $(".day").val();
-  let who = $(".appointmentName").val();
-  appointment.push(when, who);
-  localStorage.setItem("appointment", JSON.stringify(appointment));
-  RenderAppointment();
-}
-function CancelAppointment() {
-  appointment = [];
-  localStorage.removeItem("appointment");
-  $(".appointmentRender--two").hide();
-  $(".appointmentRender--one").fadeIn();
-}
+//shipping.js line: 15
+//There are two divs in the DOM and they are shown or hide dependind on if is there an appointment in the storage. This one shows the appointment already booked and hide the form of the appointment
 function RenderAppointment() {
   $(".aTwo__appointment--name").text(`
    ${appointment[1]}
@@ -191,7 +182,27 @@ function RenderAppointment() {
   $(".appointmentRender--one").hide();
   $(".appointmentRender--two").fadeIn();
 }
+//shipping.js line:17
+//There are two divs in the DOM and they are shown or hide dependind on if is there an appointment in the storage. This one shows the appointment form to book and appointment with date and name. (this sends an email to Crafty's email)
 function RenderDateAppointment() {
+  $(".appointmentRender--two").hide();
+  $(".appointmentRender--one").fadeIn();
+}
+//shipping.js line:20
+//This function creates and array that contains the value of the forms input and is used in RenderAppointment(). It also sets an item in the local storage with that info.
+function DateAppointment() {
+  appointment = [];
+  let when = $(".day").val();
+  let who = $(".appointmentName").val();
+  appointment.push(when, who);
+  localStorage.setItem("appointment", JSON.stringify(appointment));
+  RenderAppointment();
+}
+//shipping.js line:21
+//This function clears the array created with DateAppointment() and remove the item in the local storage, it also do the work of RenderDateAppointment(). It brings to the DOM the appointment form, for the users, ready to pick an other day.
+function CancelAppointment() {
+  appointment = [];
+  localStorage.removeItem("appointment");
   $(".appointmentRender--two").hide();
   $(".appointmentRender--one").fadeIn();
 }

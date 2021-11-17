@@ -16,7 +16,7 @@ cart.forEach((element) => {
 //the images selected to delete elements are chosen to add them the event click with a funtion that deletes the DOM content and the "cart" items
 let deleter = document.querySelectorAll(".cart__item--delete");
 deleter.forEach((element) => {
-  element.addEventListener("click", DeleteItems); //funtion.js line:35
+  element.addEventListener("click", DeleteItems); //funtion.js line:39
 });
 //The first total render is redered and the dynamic update are attached to the functions of elimination
-RenderingTotal(literalCart); //funtion.js line:57
+RenderingTotal(literalCart); //funtion.js line:59
