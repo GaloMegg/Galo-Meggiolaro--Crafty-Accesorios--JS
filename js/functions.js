@@ -168,7 +168,6 @@ function CalculateCostsRestOfArgentina(restOfOptions, cost, cp) {
 }
 
 function DateAppointment(e) {
-  e.preventDefault();
   appointment = [];
   let when = $(".day").val();
   let who = $(".appointmentName").val();
