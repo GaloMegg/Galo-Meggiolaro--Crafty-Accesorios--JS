@@ -8633,7 +8633,8 @@ nav {
       margin: 1%;
       font-family: "Playfair Display", serif;
       font-size: 1rem;
-      font-family: "Playfair Display", serif; }
+      font-family: "Playfair Display", serif;
+      text-align: center; }
       .shippingFlex .enviosRight div .buttonForm:hover {
         background-color: #c7abba;
         box-shadow: 0px 15px 20px #c7abba;

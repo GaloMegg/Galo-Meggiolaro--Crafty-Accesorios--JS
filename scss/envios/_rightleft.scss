@@ -65,6 +65,7 @@
       .buttonForm {
         @include buttonForm($darkerBackground);
         font-family: $buttonFont;
+        text-align: center;
       }
     }
   }
