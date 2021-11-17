@@ -7,22 +7,19 @@
 // let genderContact =;
 // let whatsapp = ;
 // let proyect = ;
-//pref email.tel
-//genero
-//whatsapp
-//proyect
+
 $.ajax({
   url: "https://formsubmit.co/ajax/galomeggiolarobul@gmail.com",
   method: "POST",
   data: {
-    name: `${$("#name").val()}`,
-    secondName: `${$("#secondName").val()}`,
-    phoneNumber: `${$("#phoneNumber").val()}`,
-    email: `${$("#email").val()}`,
-    telOrEmail: `${$("#emailradio").val()}, ${$("#teleradio").val()}`,
-    gender: `${ $("#gender").val()}`,
-    whatsapp: `${$("#whatsappsvg").val()}`,
-    message: `${$("#proyecto").val()}`,
+    name: $("#name").val(),
+    secondName: $("#secondName").val(),
+    phoneNumber: $("#phoneNumber").val(),
+    email: $("#email").val(),
+    telOrEmail: [$("#emailradio").val(), $("#teleradio").val()],
+    gender: $("#gender").val(),
+    whatsapp: $("#whatsappsvg").val(),
+    message: $("#proyecto").val(),
   },
   dataType: "json",
 });
