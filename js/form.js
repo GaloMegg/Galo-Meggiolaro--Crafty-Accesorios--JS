@@ -9,9 +9,9 @@ $(function(){
           data: $(this).serialize(),
           success: function(response){
               if(response.status == "success"){
-                  alert("We received your submission, thank you!");
+                  alert("Genial, recibimos tus datos. Dentro de unas horas nos comunicaremos contigo.");
               }else{
-                  alert("An error occured: " + response.message);
+                  alert("Uy, ¡algo malo paso! Intenta en otro momento..." + response.message);
               }
           }
       });
@@ -29,9 +29,9 @@ $(function(){
           data: $(this).serialize(),
           success: function(response){
               if(response.status == "success"){
-                  alert("We received your submission, thank you!");
+                  alert("¡Te esperamos!");
               }else{
-                  alert("An error occured: " + response.message);
+                  alert("Uy, ¡algo malo paso! Intenta en otro momento..." + response.message);
               }
           }
       });
