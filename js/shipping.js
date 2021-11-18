@@ -6,6 +6,16 @@ $.ajax({
     cost = data;
   },
 });
+//A new day is set, and it modifies the attribute "Min" and "Max" in the date input. to make sure that the appointment can, only, be set one month forward
+let today = new Date();
+$(".day").attr(
+  "min",
+  `${today.getFullYear()}-${today.getMonth() + 1}-${today.getDate()}`
+);
+$(".day").attr(
+  "max",
+  `${today.getFullYear()}-${today.getMonth() + 2}-${today.getDate()}`
+);
 // An event id added to the buttons "calcular" the depends of the destination of the package.
 $(".sentButton__caba").on("click", PayForCaba); //function.js line: 118
 $(".sentButton__restOf").on("click", PayForRestOfArgentina); //function.js line: 118

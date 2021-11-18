@@ -113,7 +113,7 @@ function RenderingTotal(literalCart) {
   }
 }
 //shipping.js
-//shipping.js line: 10
+//shipping.js line: 20
 //In the CABA shipping options the value of the select input defines the prices of the shipment, in the cp (ZIP) the users must load their own CP
 function PayForCaba(e) {
   e.preventDefault();
@@ -141,7 +141,7 @@ function CalculateCostsCaba(cabaOptions, cost, cp) {
     $(".caba__cost").text(`${renderCost}`);
   }
 }
-//shipping.js line: 11
+//shipping.js line: 21
 //In the rest of Argentina shipping options the value of the select input defines the prices of the shipment, in the cp (ZIP) the users must load their own CP
 function PayForRestOfArgentina(e) {
   e.preventDefault();
@@ -170,25 +170,25 @@ function CalculateCostsRestOfArgentina(restOfOptions, cost, cp) {
     $(".restOf__cost").text(`${renderCost}`);
   }
 }
-//shipping.js line: 15
+//shipping.js line: 25
 //There are two divs in the DOM and they are shown or hide dependind on if is there an appointment in the storage. This one shows the appointment already booked and hide the form of the appointment
 function RenderAppointment() {
   $(".aTwo__appointment--name").text(`
-   ${appointment[1]}
+    ${appointment[1]}
     `);
   $(".aTwo__appointment--day").text(`
-   ${appointment[0]}
+    ${appointment[0]}
     `);
   $(".appointmentRender--one").hide();
   $(".appointmentRender--two").fadeIn();
 }
-//shipping.js line:17
+//shipping.js line:27
 //There are two divs in the DOM and they are shown or hide dependind on if is there an appointment in the storage. This one shows the appointment form to book and appointment with date and name. (this sends an email to Crafty's email)
 function RenderDateAppointment() {
   $(".appointmentRender--two").hide();
   $(".appointmentRender--one").fadeIn();
 }
-//shipping.js line:20
+//shipping.js line:30
 //This function creates and array that contains the value of the forms input and is used in RenderAppointment(). It also sets an item in the local storage with that info.
 function DateAppointment() {
   appointment = [];
@@ -198,7 +198,7 @@ function DateAppointment() {
   localStorage.setItem("appointment", JSON.stringify(appointment));
   RenderAppointment();
 }
-//shipping.js line:21
+//shipping.js line:31
 //This function clears the array created with DateAppointment() and remove the item in the local storage, it also do the work of RenderDateAppointment(). It brings to the DOM the appointment form, for the users, ready to pick an other day.
 function CancelAppointment() {
   appointment = [];
